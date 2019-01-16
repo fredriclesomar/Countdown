@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head><title>Maintenance</title>
+</head>
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg {
+    background: url('https://images2.alphacoders.com/492/thumb-1920-49262.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
+
+
+/* Full-width input fields -- Fredric Lesomar*/
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 10px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: center;
+    padding-top: 16px;
+}
+
+/* The telek (background) */
+.telek {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* telek wedus'/Box */
+.telek-wedush {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 35%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: center;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 1s;
+    animation: animatezoom 2s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(0.4)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 200px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 10%;
+    }
+}
+
+
+
+</style>
+
+<body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;'>
+<div id="@fredricls" class="telek">
+  
+  <form class="telek-wedush animate" >
+    <div class="imgcontainer">
+   <!--   <span onclick="document.getElementById('@fredricls').style.display='none'" class="close" title="Close telek">&times;</span> -->
+      <img src="glasses.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <h1>Message : </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet placerat enim, at feugiat diam dictum vel. Morbi tincidunt enim id nisi placerat suscipit. Curabitur in metus porttitor, pellentesque sem eget, lobortis libero. Praesent porta iaculis orci. In hac habitasse platea dictumst</p>
+      <button onclick="document.getElementById('@fredricls').style.display='none'" type="submit">Close</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the telek
+var telek = document.getElementById('@fredricls');
+
+// When the user clicks anywhere outside of the telek, close it
+window.onclick = function(event) {
+    if (event.target == telek) {
+        telek.style.display = "none";
+    }
+}
+</script>
+
+
+
+<div class="bgimg">
+<!--<div class="bgimg"> -->
+ <div class="topleft">
+<button onclick="document.getElementById('@fredricls').style.display='block'" style="width:auto;">Status(?)</button>
+  </div>
+  <div class="middle">
+    <h1>COMING SOON</h1>
+    <hr>
+    <p id="fredricls" style="font-size:30px"></p>
+  </div>
+  <div class="bottomleft">
+    <p>Fredric Lesomar</p>
+</div>
+<!--akhirnya :P -->
+  </div>
+</div>
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Feb 28, 2019 15:37:25").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="fredricls"
+    document.getElementById("fredricls").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("fredricls").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+</body>
+</html>
