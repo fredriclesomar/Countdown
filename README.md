@@ -5,6 +5,6 @@
 </p>
 
 
-> Popup
+> Popup (Status(?))
   <img src="https://raw.githubusercontent.com/fredriclesomar/Countdown/master/message.png" width="750" title="Tampilan Member">
 </p>
